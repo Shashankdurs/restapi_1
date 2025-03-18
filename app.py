@@ -29,15 +29,15 @@ def student_list():
 
 @todo.route('/student/get/<int:id>')
 def student_get_by_id(id):
-        for std in students:
-                if std['id'] == id:
-                        return jsonify(std)
-
-    return "id not found"
-
+    for std in students:
+        if std['id'] == id:
+            return jsonify(std)
+    return"id not found"
 
 
-if __name__=='__main__':
+
+
+if __name__ == '__main__':
     todo.run(
         host='127.0.0.1',
         port=5010,
