@@ -27,14 +27,13 @@ def student_list():
     return jsonify(students)
 
 
-@todo.route('/student/get/<int:id>',methods=['GET'])
-def student_id(id):
-    student=next((student for student in students if student['id']==id),None)
+@todo.route('/student/get/<int:id>')
+def student_get_by_id(id):
+        for std in students:
+                if std['id'] == id:
+                        return jsonify(std)
 
-    if student is None:
-        return jsonify({'message':'Student not found'}),404
-
-    return jsonify(student)
+    return "id not found"
 
 
 
